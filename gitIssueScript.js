@@ -8,7 +8,8 @@ var lastWeekEndDay = new Date();
 lastWeekEndDay.setDate(today.getDate() - 1);
 var lastWeekStartDayStr = lastWeekStartDay.toISOString().slice(0,10);
 var lastWeekEndDayStr = lastWeekEndDay.toISOString().slice(0,10);
-var dateRange = lastWeekStartDayStr + ".." + lastWeekEndDayStr;
+var todayStr = today.toISOString().slice(0,10);
+var dateRange = todayStr;
 
 var productAPIM = {
     name: "APIM",
@@ -74,7 +75,7 @@ function postWebhook(textMsg) {
     console.log("=======Response Log======== " + responseMsg);
 }
 
-var textMsg = "*GIT issue status during last week (" + lastWeekStartDayStr + " - " + lastWeekEndDayStr + ")*\n";
+var textMsg = "*GIT issue status during the day (" + todayStr + ")*\n";
 textMsg = textMsg + getIssueStats(productAPIM);
 textMsg = textMsg + getIssueStats(productMI);
 textMsg = textMsg + getIssueStats(productIntStudio);
