@@ -2,14 +2,10 @@ const https = require('https');
 var request = require('sync-request');
 
 var today = new Date();
-var lastWeekStartDay = new Date();
-lastWeekStartDay.setDate(today.getDate() - 7);
-var lastWeekEndDay = new Date();
-lastWeekEndDay.setDate(today.getDate() - 1);
-var lastWeekStartDayStr = lastWeekStartDay.toISOString().slice(0,10);
-var lastWeekEndDayStr = lastWeekEndDay.toISOString().slice(0,10);
-var todayStr = today.toISOString().slice(0,10);
-var dateRange = todayStr;
+var yesterday = new Date();
+yesterday.setDate(today.getDate() - 1);
+var yesterdayStr = yesterday.toISOString().slice(0,10);
+var dateRange = yesterdayStr;
 
 var productAPIM = {
     name: "APIM",
