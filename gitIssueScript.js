@@ -71,7 +71,7 @@ function postWebhook(textMsg) {
     console.log("=======Response Log======== " + responseMsg);
 }
 
-var textMsg = "*GIT issue status during the day (" + todayStr + ")*\n";
+var textMsg = "*GIT issue status during the day (" + yesterdayStr + ")*\n";
 textMsg = textMsg + getIssueStats(productAPIM);
 textMsg = textMsg + getIssueStats(productMI);
 textMsg = textMsg + getIssueStats(productIntStudio);
